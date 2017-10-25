@@ -3,10 +3,12 @@ package com.zhoucj.zookeeper;
 import org.apache.log4j.Logger;
 import org.apache.zookeeper.*;
 
+import java.io.IOException;
+
 /**
  * @author zhoucj
  */
-public class MasterNode {
+public class MasterNode implements Watcher{
 
     Logger logger = Logger.getLogger(MasterNode.class);
 
@@ -17,6 +19,10 @@ public class MasterNode {
         createParent("/assign", new byte[0]);
         createParent("/tasks", new byte[0]);
         createParent("/status", new byte[0]);
+    }
+
+    public MasterNode() throws IOException {
+        zk = new ZooKeeper("127.0.0.1:2181", 20000, this);
     }
 
     public void createParent(String path, byte[] data) {
@@ -45,4 +51,20 @@ public class MasterNode {
             }
         }
     };
+
+    public void stop() throws InterruptedException {
+        zk.close();
+    }
+
+    public static void main(String[] args) throws IOException, InterruptedException {
+        MasterNode mn = new MasterNode();
+        mn.bootstrap();
+        Thread.sleep(60000);
+        mn.stop();
+    }
+
+    @Override
+    public void process(WatchedEvent event) {
+        System.out.println(event);
+    }
 }
