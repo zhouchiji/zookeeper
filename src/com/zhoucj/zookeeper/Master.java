@@ -32,7 +32,7 @@ public class Master implements Watcher {
          }
      }*/
 
-    AsyncCallback.DataCallback dataCallback = new AsyncCallback.DataCallback() {
+    AsyncCallback.DataCallback checkCallback = new AsyncCallback.DataCallback() {
         @Override
         public void processResult(int rc, String path, Object ctx, byte[] data, Stat stat) {
             switch (KeeperException.Code.get(rc)) {
@@ -47,7 +47,7 @@ public class Master implements Watcher {
     };
 
     public void checkMaster() {
-        zk.getData("/master", false, dataCallback, null);
+        zk.getData("/master", false, checkCallback, null);
     }
 
 /*    public void runForMaster() {
@@ -64,7 +64,7 @@ public class Master implements Watcher {
         }
     }*/
 
-    AsyncCallback.StringCallback callback = new AsyncCallback.StringCallback() {
+    AsyncCallback.StringCallback createCallback = new AsyncCallback.StringCallback() {
         @Override
         public void processResult(int rc, String path, Object ctx, String name) {
             switch (KeeperException.Code.get(rc)) {
@@ -83,7 +83,17 @@ public class Master implements Watcher {
     };
 
     public void runForMaster() {
-        zk.create("/master", serviceId.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL, callback, null);
+        zk.create("/master", serviceId.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL, createCallback, null);
+        try {
+            byte[] b = zk.getData("/master", false, new Stat());
+            for (byte b1 : b) {
+                System.out.print(b1+" ");
+            }
+        } catch (KeeperException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void startUp() throws Exception {
