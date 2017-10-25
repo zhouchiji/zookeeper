@@ -5,6 +5,10 @@ import org.apache.zookeeper.data.Stat;
 
 import java.util.Random;
 
+/**
+ * @author zhoucj
+ */
+
 public class Master implements Watcher {
 
     ZooKeeper zk;
@@ -41,6 +45,8 @@ public class Master implements Watcher {
                     break;
                 case NONODE:
                     runForMaster();
+                    break;
+                default:
                     break;
             }
         }
@@ -87,7 +93,7 @@ public class Master implements Watcher {
         try {
             byte[] b = zk.getData("/master", false, new Stat());
             for (byte b1 : b) {
-                System.out.print(b1+" ");
+                System.out.print(b1 + " ");
             }
         } catch (KeeperException e) {
             e.printStackTrace();
@@ -120,7 +126,7 @@ public class Master implements Watcher {
         } else {
             System.out.println("Someone else is Leader");
         }*/
-       Thread.sleep(60000);
+        Thread.sleep(60000);
         master.stop();
     }
 }
