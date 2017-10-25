@@ -39,7 +39,7 @@ public class Master implements Watcher {
                 case CONNECTIONLOSS:
                     checkMaster();
                     break;
-                case OK:
+                case NONODE:
                     runForMaster();
                     break;
             }
@@ -103,14 +103,14 @@ public class Master implements Watcher {
     public static void main(String[] args) throws Exception {
         Master master = new Master("127.0.0.1:2181");
         master.startUp();
-        master.checkMaster();
+        master.runForMaster();
  /*       if (isLeader) {
             System.out.println("I'm the Leader");
             Thread.sleep(60000);
         } else {
             System.out.println("Someone else is Leader");
         }*/
-//       Thread.sleep(60000);
+       Thread.sleep(60000);
         master.stop();
     }
 }
