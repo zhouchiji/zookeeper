@@ -17,22 +17,40 @@ public class Master implements Watcher {
         this.host = host;
     }
 
-    public boolean checkMaster() {
-        while (true) {
-            try {
-                Stat stat = new Stat();
-                byte[] data = zk.getData("/master", false, stat);
-                isLeader = serviceId.getBytes().equals(data);
-                return isLeader;
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (KeeperException e) {
-                e.printStackTrace();
+    /* public boolean checkMaster() {
+         while (true) {
+             try {
+                 Stat stat = new Stat();
+                 byte[] data = zk.getData("/master", false, stat);
+                 isLeader = serviceId.getBytes().equals(data);
+                 return isLeader;
+             } catch (InterruptedException e) {
+                 e.printStackTrace();
+             } catch (KeeperException e) {
+                 e.printStackTrace();
+             }
+         }
+     }*/
+
+    AsyncCallback.DataCallback dataCallback = new AsyncCallback.DataCallback() {
+        @Override
+        public void processResult(int rc, String path, Object ctx, byte[] data, Stat stat) {
+            switch (KeeperException.Code.get(rc)) {
+                case CONNECTIONLOSS:
+                    checkMaster();
+                    break;
+                case OK:
+                    runForMaster();
+                    break;
             }
         }
+    };
+
+    public void checkMaster() {
+        zk.getData("/master", false, dataCallback, null);
     }
 
-    public void runForMaster() {
+/*    public void runForMaster() {
         while (true) {
             try {
                 zk.create("/master", serviceId.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL);
@@ -44,6 +62,28 @@ public class Master implements Watcher {
             } catch (KeeperException e) {
             }
         }
+    }*/
+
+    AsyncCallback.StringCallback callback = new AsyncCallback.StringCallback() {
+        @Override
+        public void processResult(int rc, String path, Object ctx, String name) {
+            switch (KeeperException.Code.get(rc)) {
+                case CONNECTIONLOSS:
+                    checkMaster();
+                    break;
+                case OK:
+                    isLeader = true;
+                    break;
+                default:
+                    isLeader = false;
+                    break;
+            }
+            System.out.println("I'm " + (isLeader ? "" : "not ") + "the Leader");
+        }
+    };
+
+    public void runForMaster() {
+        zk.create("/master", serviceId.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL, callback, null);
     }
 
     public void startUp() throws Exception {
@@ -63,13 +103,14 @@ public class Master implements Watcher {
     public static void main(String[] args) throws Exception {
         Master master = new Master("127.0.0.1:2181");
         master.startUp();
-        master.runForMaster();
-        if (isLeader) {
+        master.checkMaster();
+ /*       if (isLeader) {
             System.out.println("I'm the Leader");
             Thread.sleep(60000);
-        }else {
+        } else {
             System.out.println("Someone else is Leader");
-        }
+        }*/
+//       Thread.sleep(60000);
         master.stop();
     }
 }
