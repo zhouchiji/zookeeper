@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * @author zhoucj
  */
-public class MasterNode implements Watcher{
+public class MasterNode implements Watcher {
 
     Logger logger = Logger.getLogger(MasterNode.class);
 
