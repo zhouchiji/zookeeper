@@ -1,6 +1,5 @@
 package com.zhoucj.zookeeper;
 
-import org.apache.log4j.Logger;
 import org.apache.zookeeper.*;
 
 import java.io.IOException;
@@ -9,8 +8,6 @@ import java.io.IOException;
  * @author zhoucj
  */
 public class MasterNode implements Watcher {
-
-    Logger logger = Logger.getLogger(MasterNode.class);
 
     ZooKeeper zk;
 
@@ -38,15 +35,15 @@ public class MasterNode implements Watcher {
                     break;
 
                 case OK:
-                    logger.info("Parent created ");
+                    System.out.println("Parent created ");
                     break;
 
                 case NODEEXISTS:
-                    logger.info("Parent is already registered: " + path);
+                    System.out.println("Parent is already registered: " + path);
                     break;
 
                 default:
-                    logger.error("Something went wrong: ", KeeperException.create(KeeperException.Code.get(rc), path));
+                    System.err.println("Something went wrong: "+ KeeperException.create(KeeperException.Code.get(rc), path));
                     break;
             }
         }
