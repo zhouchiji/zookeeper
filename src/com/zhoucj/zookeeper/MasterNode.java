@@ -8,18 +8,17 @@ import java.io.IOException;
  * @author zhoucj
  */
 public class MasterNode implements Watcher {
-
     ZooKeeper zk;
 
     public void bootstrap() {
-        createParent("/worker", new byte[0]);
+        createParent("/workers", new byte[0]);
         createParent("/assign", new byte[0]);
         createParent("/tasks", new byte[0]);
         createParent("/status", new byte[0]);
     }
 
     public MasterNode() throws IOException {
-        zk = new ZooKeeper("127.0.0.1:2181", 20000, this);
+        zk = new ZooKeeper("127.0.0.1:2182", 20000, this);
     }
 
     public void createParent(String path, byte[] data) {
@@ -39,7 +38,7 @@ public class MasterNode implements Watcher {
                     break;
 
                 case NODEEXISTS:
-                    System.out.println("Parent is already registered: " + path);
+                    System.err.println("Parent is already registered: " + path);
                     break;
 
                 default:
