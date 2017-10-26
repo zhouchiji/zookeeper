@@ -53,7 +53,7 @@ public class MasterNode implements Watcher {
         zk.close();
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws Exception {
         MasterNode mn = new MasterNode();
         mn.bootstrap();
         Thread.sleep(60000);
