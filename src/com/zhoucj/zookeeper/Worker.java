@@ -29,7 +29,7 @@ public class Worker implements Watcher {
 
     @Override
     public void process(WatchedEvent event) {
-        LOG.info(event.toString() + "," + hostPort);
+        System.out.println(event.toString() + "," + hostPort);
         if (event.getType() == Event.EventType.NodeChildrenChanged) {
             register();
         }
@@ -38,7 +38,7 @@ public class Worker implements Watcher {
     AsyncCallback.ChildrenCallback childrenCallback = new AsyncCallback.ChildrenCallback() {
         @Override
         public void processResult(int rc, String path, Object ctx, List<String> children) {
-
+            System.out.println("is call back");
         }
     };
 
