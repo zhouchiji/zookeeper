@@ -2,9 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc84c795-6ffc-4872-b553-9c4ee9a16d7d" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/IOTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/MainRun$1MainCall.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/MainRun.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/Thread1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/com/zhouchiji/rpc/Consumer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/com/zhouchiji/rpc/Provider.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/com/zhouchiji/rpc/SayHelloService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/com/zhouchiji/rpc/SayHelloServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/com/zhouchiji/test/Test.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/com/zhoucj/zookeeper/Master$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/com/zhoucj/zookeeper/Master$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/com/zhoucj/zookeeper/Master$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/com/zhoucj/zookeeper/Master$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/com/zhoucj/zookeeper/Master.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/com/zhoucj/zookeeper/MasterNode$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/com/zhoucj/zookeeper/MasterNode$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/com/zhoucj/zookeeper/MasterNode.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/com/zhoucj/zookeeper/Worker$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/com/zhoucj/zookeeper/Worker$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/com/zhoucj/zookeeper/Worker$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/zookeeper/com/zhoucj/zookeeper/Worker.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/zhoucj/zookeeper/MasterNode.java" afterPath="$PROJECT_DIR$/src/com/zhoucj/zookeeper/MasterNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/zhoucj/zookeeper/Worker.java" afterPath="$PROJECT_DIR$/src/com/zhoucj/zookeeper/Worker.java" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -370,11 +389,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10045000" />
+    <option name="totallyTimeSpent" value="10597000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -399,7 +417,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17110874" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17110874" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -413,14 +431,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/zhoucj/zookeeper/Worker.java</url>
-          <line>32</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
@@ -762,42 +772,42 @@
         <state relative-caret-position="-5589">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1509346394069" expanded="true" signature="51310:51327" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="51310:51345" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="51310:51358" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="51310:51373" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="51408:53610" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="51421:53595" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="51475:51770" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="51494:51755" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="51557:51735" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="51597:51701" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="51618:51679" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="51820:52147" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="51839:52132" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="51934:52112" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="51974:52078" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="51995:52056" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="52198:52463" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="52217:52448" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="52250:52428" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="52290:52394" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="52311:52372" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="52506:52812" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="52525:52797" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="52599:52777" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="52639:52743" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="52660:52721" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="52863:53214" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="52882:53199" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="52962:53179" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="53002:53145" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="53023:53123" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="53266:53581" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="53285:53566" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="53368:53546" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="53408:53512" ph="..." />
-            <marker date="1509346394069" expanded="true" signature="53429:53490" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="53398:53415" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="53398:53433" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="53398:53446" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="53398:53461" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="53496:55698" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="53509:55683" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="53563:53858" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="53582:53843" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="53645:53823" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="53685:53789" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="53706:53767" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="53908:54235" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="53927:54220" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="54022:54200" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="54062:54166" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="54083:54144" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="54286:54551" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="54305:54536" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="54338:54516" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="54378:54482" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="54399:54460" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="54594:54900" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="54613:54885" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="54687:54865" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="54727:54831" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="54748:54809" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="54951:55302" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="54970:55287" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="55050:55267" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="55090:55233" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="55111:55211" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="55354:55669" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="55373:55654" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="55456:55634" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="55496:55600" ph="..." />
+            <marker date="1509347023831" expanded="true" signature="55517:55578" ph="..." />
           </folding>
         </state>
       </provider>
