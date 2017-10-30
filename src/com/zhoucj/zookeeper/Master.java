@@ -102,14 +102,32 @@ public class Master implements Watcher {
         }
     }
 
+    AsyncCallback.StatCallback statCallback = new AsyncCallback.StatCallback() {
+        @Override
+        public void processResult(int rc, String path, Object ctx, Stat stat) {
+            if (KeeperException.Code.get(rc) == KeeperException.Code.CONNECTIONLOSS) {
+                isDeleted();
+            } else if (KeeperException.Code.get(rc) == KeeperException.Code.OK) {
+                if (stat == null) {
+                    runForMaster();
+                }
+            }
+        }
+    };
+
+    public void isDeleted(){
+        zk.exists("/master", this, statCallback, null);
+    }
+
     public void startUp() throws Exception {
         zk = new ZooKeeper(host, 15000, this);
-
     }
 
     @Override
     public void process(WatchedEvent event) {
-        System.out.println(event);
+        if (event.getType() == Event.EventType.NodeDeleted) {
+            runForMaster();
+        }
     }
 
     public void stop() throws InterruptedException {
@@ -126,6 +144,8 @@ public class Master implements Watcher {
         } else {
             System.out.println("Someone else is Leader");
         }*/
+        Thread.sleep(10000);
+        master.isDeleted();
         Thread.sleep(60000);
         master.stop();
     }
