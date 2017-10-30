@@ -18,7 +18,7 @@ public class MasterNode implements Watcher {
     }
 
     public MasterNode() throws IOException {
-        zk = new ZooKeeper("127.0.0.1:2182", 20000, this);
+        zk = new ZooKeeper("127.0.0.1:2181", 20000, this);
     }
 
     public void createParent(String path, byte[] data) {
@@ -55,7 +55,7 @@ public class MasterNode implements Watcher {
     public static void main(String[] args) throws Exception {
         MasterNode mn = new MasterNode();
         mn.bootstrap();
-        Thread.sleep(60000);
+        Thread.sleep(5000);
         mn.stop();
     }
 

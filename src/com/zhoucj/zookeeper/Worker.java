@@ -4,6 +4,7 @@ import org.apache.zookeeper.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
 import java.util.Random;
 
 
@@ -29,6 +30,20 @@ public class Worker implements Watcher {
     @Override
     public void process(WatchedEvent event) {
         LOG.info(event.toString() + "," + hostPort);
+        if (event.getType() == Event.EventType.NodeChildrenChanged) {
+            register();
+        }
+    }
+
+    AsyncCallback.ChildrenCallback childrenCallback = new AsyncCallback.ChildrenCallback() {
+        @Override
+        public void processResult(int rc, String path, Object ctx, List<String> children) {
+
+        }
+    };
+
+    public void isChanged() {
+        zk.getChildren("/workers", this, childrenCallback, null);
     }
 
     public void register() {
@@ -58,10 +73,17 @@ public class Worker implements Watcher {
         }
     };
 
+    public void shutdown() throws InterruptedException {
+        zk.close();
+    }
+
     public static void main(String[] args) throws Exception {
-        Worker w = new Worker("127.0.0.1:2182");
+        Worker w = new Worker("127.0.0.1:2181");
         w.startZk();
         w.register();
-        Thread.sleep(30000);
+        Thread.sleep(10000);
+        w.isChanged();
+        Thread.sleep(60000);
+        w.shutdown();
     }
 }
