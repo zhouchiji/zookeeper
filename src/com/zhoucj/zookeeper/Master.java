@@ -127,6 +127,7 @@ public class Master implements Watcher {
     public void process(WatchedEvent event) {
         if (event.getType() == Event.EventType.NodeDeleted) {
             runForMaster();
+            isDeleted();
         }
     }
 
