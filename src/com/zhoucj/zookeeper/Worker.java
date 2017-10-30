@@ -48,7 +48,7 @@ public class Worker implements Watcher {
         zk.getChildren("/workers", new Watcher() {
             @Override
             public void process(WatchedEvent event) {
-                System.out.println(event.getPath() + "activity");
+                System.out.println(event.getPath() + " is activity");
                 if (event.getType() == Event.EventType.NodeChildrenChanged) {
                     register();
                 }
