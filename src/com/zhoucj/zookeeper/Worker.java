@@ -30,20 +30,30 @@ public class Worker implements Watcher {
     @Override
     public void process(WatchedEvent event) {
         System.out.println(event.toString() + "," + hostPort);
-        if (event.getType() == Event.EventType.NodeChildrenChanged) {
-            register();
-        }
+
     }
 
     AsyncCallback.ChildrenCallback childrenCallback = new AsyncCallback.ChildrenCallback() {
         @Override
         public void processResult(int rc, String path, Object ctx, List<String> children) {
-            System.out.println("is call back");
+            if (KeeperException.Code.get(rc) == KeeperException.Code.OK) {
+                System.out.println("is OK");
+            } else {
+                isChanged();
+            }
         }
     };
 
     public void isChanged() {
-        zk.getChildren("/workers", this, childrenCallback, null);
+        zk.getChildren("/workers", new Watcher() {
+            @Override
+            public void process(WatchedEvent event) {
+                System.out.println(event.getPath() + "activity");
+                if (event.getType() == Event.EventType.NodeChildrenChanged) {
+                    register();
+                }
+            }
+        }, childrenCallback, null);
     }
 
     public void register() {
