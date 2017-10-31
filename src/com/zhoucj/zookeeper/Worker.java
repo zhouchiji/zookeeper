@@ -51,6 +51,7 @@ public class Worker implements Watcher {
                 System.out.println(event.getPath() + " is activity");
                 if (event.getType() == Event.EventType.NodeChildrenChanged) {
                     register();
+                    isChanged();
                 }
             }
         }, childrenCallback, null);
