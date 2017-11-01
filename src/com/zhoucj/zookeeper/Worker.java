@@ -1,8 +1,6 @@
 package com.zhoucj.zookeeper;
 
 import org.apache.zookeeper.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Random;
@@ -12,7 +10,6 @@ import java.util.Random;
  * @author zhoucj
  */
 public class Worker implements Watcher {
-    private static final Logger LOG = LoggerFactory.getLogger(Worker.class);
     ZooKeeper zk;
     String hostPort;
     Random random = new Random();
