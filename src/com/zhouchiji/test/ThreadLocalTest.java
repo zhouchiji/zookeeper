@@ -3,6 +3,9 @@ package com.zhouchiji.test;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author zhouchiji
+ */
 public class ThreadLocalTest {
     private static ThreadLocal threadLocal = new ThreadLocal();
 
