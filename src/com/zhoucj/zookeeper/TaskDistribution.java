@@ -112,12 +112,15 @@ public class TaskDistribution {
     };
 
     public void deleteTask(String path){
-        zk.delete("/tasks/"+path, -1, deleteCallback, null);
+        zk.delete("/tasks/"+path, -1, deleteCallback, path);
     }
 
     AsyncCallback.VoidCallback deleteCallback = new AsyncCallback.VoidCallback() {
         @Override
         public void processResult(int rc, String path, Object ctx) {
+            if (KeeperException.Code.get(rc) == KeeperException.Code.CONNECTIONLOSS) {
+                deleteTask((String) ctx);
+            }
         }
     };
 
