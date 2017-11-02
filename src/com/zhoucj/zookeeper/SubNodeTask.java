@@ -1,6 +1,5 @@
 package com.zhoucj.zookeeper;
 
-import com.sun.jmx.snmp.tasks.ThreadService;
 import org.apache.zookeeper.*;
 import org.apache.zookeeper.data.Stat;
 
@@ -9,7 +8,6 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @author zhouchiji
