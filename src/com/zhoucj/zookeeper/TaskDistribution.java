@@ -13,7 +13,7 @@ import java.util.Random;
 public class TaskDistribution {
     private String hostName;
     private ZooKeeper zk;
-    private List<String> workerList;
+    public static List<String> workerList;
     private Random rand = new Random();
 
     public TaskDistribution(String hostName) {
