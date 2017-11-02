@@ -121,8 +121,15 @@ public class TaskDistribution {
         }
     };
 
+    public void stop() throws InterruptedException {
+        zk.close();
+    }
+
     public static void main(String[] args) throws Exception {
         TaskDistribution td = new TaskDistribution("127.0.0.1:2181");
         td.start();
+        td.getChildren();
+        Thread.sleep(5000);
+        td.stop();
     }
 }
