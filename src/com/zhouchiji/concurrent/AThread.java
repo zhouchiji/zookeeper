@@ -9,15 +9,16 @@ public class AThread extends Thread{
 
     @Override
     public void run() {
-        Map<String, String> data = new HashMap<>();
-        data.put("a","this is a thread");
-        aThreadLocal.set(data);
-        doSomethings();
-        System.out.println(aThreadLocal.get());
+        Map<String, Object> data = Global.getTransfer();
+//        data.put("a","this is a thread");
+//        aThreadLocal.set(data);
+        Global.setTransfer("a", "this is a Thread");
+//        doSomethings();
+        System.out.println(Global.getTransfer().get("a"));
     }
 
     private void doSomethings() {
-        Map<String, String> data = (Map<String, String>) aThreadLocal.get();
+        Map<String, Object> data = Global.getTransfer();
         data.put("a", "a is change");
     }
 

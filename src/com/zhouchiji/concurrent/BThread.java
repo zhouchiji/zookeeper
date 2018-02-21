@@ -10,15 +10,15 @@ public class BThread extends Thread{
     @Override
     public void run() {
         super.run();
-        Map<String, String> data = new HashMap<>();
-        data.put("b","this is b thread");
-        bThreadLocal.set(data);
-        doSomethings();
-        System.out.println(bThreadLocal.get());
+        Map<String, Object> data = Global.getTransfer();
+//        data.put("b","this is b thread");
+        Global.setTransfer("b", "this is b thread");
+//        doSomethings();
+        System.out.println(Global.getTransfer().get("b"));
     }
 
     private void doSomethings() {
-        Map<String, String> data = (Map<String, String>) bThreadLocal.get();
+        Map<String, Object> data = Global.getTransfer();
         data.put("b", "b is change");
     }
 }
