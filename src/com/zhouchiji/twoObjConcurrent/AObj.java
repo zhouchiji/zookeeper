@@ -2,9 +2,12 @@ package com.zhouchiji.twoObjConcurrent;
 
 public class AObj {
 
+    private BObj bObj;
 
-    public synchronized void A(BObj bObj) throws InterruptedException {
+
+    public synchronized void A() throws InterruptedException {
         Thread.sleep(1000);
+        bObj = new BObj();
         bObj.B1();
     }
 
